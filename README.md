@@ -31,11 +31,11 @@ It uses PrimeNG for UI components, Bootstrap for layout, and communicates with a
 
 ## Requirements
 
-Node.js (used 22.20.0)
-npm (used 10.9.3)
-Angular CLI (used 20.3.4)
-Docker (used 28.0.4)
-Docker Compose (used 2.34.0)
+Node.js (used 22.20.0)  
+npm (used 10.9.3)  
+Angular CLI (used 20.3.4)  
+Docker (used 28.0.4)  
+Docker Compose (used 2.34.0)  
 
 ####### How to Run the Project (With or without Docker) ######
 ##############################################################
