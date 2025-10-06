@@ -1,0 +1,178 @@
+<div>
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="tableContainer">
+        <span>List years with multiple winners</span>
+        <p-table
+          #multipleWinnerTable
+          stripedRows
+          [value]="yearsWithMultipleWinners.years"
+          [rows]="yearsWithMultipleWinners.years.length"
+          [totalRecords]="yearsWithMultipleWinners.years.length"
+          [lazy]="true"
+          (onLazyLoad)="getYearsWithMultipleWinners()"
+          [loading]="loading"
+          class="mt-10"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width: 50%;">Year</th>
+              <th style="width: 50%;">Win Count</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-item>
+            <tr>
+              <td>{{ item.year }}</td>
+              <td>{{ item.winnerCount }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+    <div class="col-lg-6">
+      <div class="tableContainer">
+        <span>Top 3 studios with winners</span>
+        <p-table
+          #topThreeStudiosTable
+          stripedRows
+          [value]="studiosWithWinCount.studios"
+          [rows]="studiosWithWinCount.studios.length"
+          [totalRecords]="studiosWithWinCount.studios.length"
+          [lazy]="true"
+          (onLazyLoad)="getStudiosWithWinCount()"
+          [loading]="loading"
+          class="mt-10"
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width: 50%;">Name</th>
+              <th style="width: 50%;">Win Count</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-item>
+            <tr>
+              <td>{{ item.name }}</td>
+              <td>{{ item.winCount }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+
+  <div class="row mt-10">
+    <div class="col-lg-6">
+      <div class="tableContainer">
+        <span>Producers with longest and shortest interval between wins</span>
+
+        <div class="labelTable">Maximum</div>
+        <p-table
+          #producersIntervalsMaxTable
+          stripedRows
+          [value]="maxMinWinIntervalForProducers.max"
+          [rows]="maxMinWinIntervalForProducers.max.length"
+          [totalRecords]="maxMinWinIntervalForProducers.max.length"
+          [lazy]="true"
+          [loading]="loading"
+
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width: 25%;">Producer</th>
+              <th style="width: 25%;">Interval</th>
+              <th style="width: 25%;">Previous Year</th>
+              <th style="width: 25%;">Following Year</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-item>
+            <tr>
+              <td>{{ item.producer }}</td>
+              <td>{{ item.interval }}</td>
+              <td>{{ item.previousWin }}</td>
+              <td>{{ item.followingWin }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+
+        <div class="labelTable">Minimum</div>
+        <p-table
+          #producersIntervalsMinTable
+          stripedRows
+          [value]="maxMinWinIntervalForProducers.min"
+          [rows]="maxMinWinIntervalForProducers.min.length"
+          [totalRecords]="maxMinWinIntervalForProducers.min.length"
+          [lazy]="true"
+          [loading]="loading"
+
+        >
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width: 25%;">Producer</th>
+              <th style="width: 25%;">Interval</th>
+              <th style="width: 25%;">Previous Year</th>
+              <th style="width: 25%;">Following Year</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-item>
+            <tr>
+              <td>{{ item.producer }}</td>
+              <td>{{ item.interval }}</td>
+              <td>{{ item.previousWin }}</td>
+              <td>{{ item.followingWin }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+
+    <div class="col-lg-6">
+      <div class="tableContainer">
+        <span>List movie winners by year</span>
+        <p-table
+          #movieByYearTable
+          stripedRows
+          [value]="winnersByYear.winners"
+          [rows]="winnersByYear.winners.length"
+          [totalRecords]="winnersByYear.winners.length"
+          [loading]="loading"
+          class="mt-10"
+        >
+          <ng-template #caption>
+            <div class="searchBar">
+              <div style="width: 100%;">
+                <p-inputnumber style="width: 100%;" [(ngModel)]="getWinnerSearch" [showButtons]="true" [useGrouping]="false" [min]="1888" [max]="3000" inputId="winntersSearch"/>
+              </div>
+              <div style="width: 42px;">
+                <p-inputicon>
+                  <i class="pi pi-search" (click)="getWinnersByYear()"></i>
+                </p-inputicon>
+              </div>
+            </div>
+          </ng-template>
+
+          <ng-template pTemplate="header">
+            <tr>
+              <th style="width: 33%;">id</th>
+              <th style="width: 33%;">Year</th>
+              <th style="width: 34%;">Title</th>
+            </tr>
+          </ng-template>
+
+          <ng-template pTemplate="body" let-item>
+            <tr>
+              <td>{{ item.id }}</td>
+              <td>{{ item.year }}</td>
+              <td>{{ item.title }}</td>
+            </tr>
+          </ng-template>
+        </p-table>
+      </div>
+    </div>
+  </div>
+</div>
+
+

@@ -1,0 +1,10 @@
+.topbar {
+  background-color: #333;
+  color: white;
+  padding: 15px 20px;
+}
+
+.topbar h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}

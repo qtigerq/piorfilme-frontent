@@ -1,0 +1,42 @@
+.sidebar {
+  width: 200px;
+  background-color: #d3d3d3;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
+
+.sidebar a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+}
+
+nav ul {
+  list-style: none;
+  margin-top: 20px;
+}
+
+nav a {
+  color: rgb(50, 50, 50);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a.active {
+  color: blue;
+}
+
+.active-link {
+  color: blue;
+  font-weight: bold; /* opcional, só para destacar mais */
+}

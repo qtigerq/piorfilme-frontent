@@ -1,0 +1,48 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
+}
+
+thead th {
+  background-color: #f0f0f0;
+  text-align: left;
+  padding: 8px;
+  border-bottom: 2px solid #ccc;
+}
+
+tbody td {
+  padding: 8px;
+  border-bottom: 1px solid #eee;
+}
+
+.pagination {
+  margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 14px;
+}
+
+:host ::ng-deep .p-datatable-thead > tr > th {
+  background-color: #f9f9f9 !important;
+  color: #333;
+}
+
+
+.tableContainer {
+  box-shadow: 1px 1px 2px;
+  padding: 10px;
+}
+
+.tableContainer span{
+  font-weight: 700;
+}
+
+.tableContainer p-table{
+  border: 1px solid #ccc;
+}

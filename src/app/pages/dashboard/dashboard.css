@@ -1,0 +1,35 @@
+.tableContainer {
+  box-shadow: 1px 1px 2px;
+  padding: 10px;
+}
+
+.tableContainer span{
+  font-weight: 700;
+}
+
+.tableContainer p-table{
+  border: 1px solid #ccc;
+}
+
+.labelTable {
+  font-size: 20px;
+  margin-top: 10px;
+}
+
+:host ::ng-deep .p-inputicon {
+  background-color: #337fcb;
+  width: 40px;
+  height: 40px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFF;
+  cursor: pointer;
+}
+
+.searchBar {
+  display: flex;
+  gap: 10px;
+  align-items: end;
+}
