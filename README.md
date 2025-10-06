@@ -49,14 +49,14 @@ cd piorfilme-frontend
 ### Without Docker
 ########### 2A. Install Dependencies and Build ################
 
-- npm install
+- npm install  
 ##############################################################
 
 ################ 3A. Run the Application ######################
 
 - npm start
 
-The application will start on: http://localhost:4200
+The application will start on: http://localhost:4200  
 ##############################################################
 
 ### With docker
@@ -64,10 +64,10 @@ The application will start on: http://localhost:4200
 
 - docker compose up --build
 
-The application will start on: http://localhost:4200
+The application will start on: http://localhost:4200  
 ##############################################################
 
 ##################### Running Tests ##########################
 
-npm test
+npm test  
 ##############################################################
