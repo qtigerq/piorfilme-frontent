@@ -37,37 +37,38 @@ Angular CLI (used 20.3.4)
 Docker (used 28.0.4)  
 Docker Compose (used 2.34.0)  
 
-####### How to Run the Project (With or without Docker) ######
-##############################################################
+## How to Run the Project (With or without Docker) ###
 
-################ 1. Clone the Repository #####################
 
-git clone https://github.com/qtigerq/piorfilme-frontent.git
-cd piorfilme-frontend
-##############################################################
+#### 1. Clone the Repository
+
+- git clone https://github.com/qtigerq/piorfilme-frontent.git
+- cd piorfilme-frontend
+
 
 ### Without Docker
-########### 2A. Install Dependencies and Build ################
+
+#### 2A. Install Dependencies and Build  
 
 - npm install  
-##############################################################
 
-################ 3A. Run the Application ######################
+
+#### 3A. Run the Application  
 
 - npm start
 
 The application will start on: http://localhost:4200  
-##############################################################
 
-### With docker
-######### 2B. Run Application via Docker Compose #############
+
+### With docker  
+
+#### 2B. Run Application via Docker Compose  
 
 - docker compose up --build
 
 The application will start on: http://localhost:4200  
-##############################################################
 
-##################### Running Tests ##########################
 
-npm test  
-##############################################################
+#### Running Tests  
+
+- npm test  
