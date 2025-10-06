@@ -1,59 +1,73 @@
-# PiorFilme
+# About
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.4.
+This project was developed as part of a frontend technical challenge for Outsera.
 
-## Development server
+---
 
-To start a local development server, run:
+# Autor
 
-```bash
-ng serve
-```
+Tiago Bruno de Melo - Software Engineer
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+---
 
-## Code scaffolding
+# Worst Movie from Golden Raspberry Awards
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+An Angular project for displaying and managing data related to the worst movies.
+It uses PrimeNG for UI components, Bootstrap for layout, and communicates with an external backend API.
 
-```bash
-ng generate component component-name
-```
+---
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## Technologies Used
 
-```bash
-ng generate --help
-```
+- Angular ^20.3.0
+- PrimeNG ^20.2.0
+- PrimeIcons ^7.0.0
+- Bootstrap ^5.3.8
+- RxJS ~7.8.0
+- Karma + Jasmine (for unit testing)
+- Docker
 
-## Building
+---
 
-To build the project run:
+## Requirements
 
-```bash
-ng build
-```
+Node.js (used 22.20.0)
+npm (used 10.9.3)
+Angular CLI (used 20.3.4)
+Docker (used 28.0.4)
+Docker Compose (used 2.34.0)
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+####### How to Run the Project (With or without Docker) ######
+##############################################################
 
-## Running unit tests
+################ 1. Clone the Repository #####################
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+git clone https://github.com/qtigerq/piorfilme-frontent.git
+cd piorfilme-frontend
+##############################################################
 
-```bash
-ng test
-```
+### Without Docker
+########### 2A. Install Dependencies and Build ################
 
-## Running end-to-end tests
+- npm install
+##############################################################
 
-For end-to-end (e2e) testing, run:
+################ 3A. Run the Application ######################
 
-```bash
-ng e2e
-```
+- npm start
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+The application will start on: http://localhost:4200
+##############################################################
 
-## Additional Resources
+### With docker
+######### 2B. Run Application via Docker Compose #############
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- docker compose up --build
+
+The application will start on: http://localhost:4200
+##############################################################
+
+##################### Running Tests ##########################
+
+npm test
+##############################################################

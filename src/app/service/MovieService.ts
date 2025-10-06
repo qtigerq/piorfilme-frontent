@@ -7,12 +7,13 @@ import { YearWinnersCount } from '../model/YearWinnersCount';
 import { StudiosWithWinCount } from '../model/StudiosWithWinCount';
 import { WinInterval } from '../model/WinInterval';
 import { WinnersByYear } from '../model/WinnersByYear';
+import { environment } from '../../environments/environments';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MovieService {
-  private baseUrl = 'http://localhost:8080/movie';
+  private baseUrl = environment.apiBaseUrl;
 
   constructor(private http: HttpClient) {}
 
