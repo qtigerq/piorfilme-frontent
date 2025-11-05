@@ -25,17 +25,22 @@ It uses PrimeNG for UI components, Bootstrap for layout, and communicates with a
 - Bootstrap ^5.3.8
 - RxJS ~7.8.0
 - Karma + Jasmine (for unit testing)
-- Docker
+- Docker (used 28.0.4)  
+- Docker Compose (used 2.34.0)  
 
 ---
 
-## Requirements
+## Node Version Requirement
 
-Node.js (used 22.20.0)  
-npm (used 10.9.3)  
-Angular CLI (used 20.3.4)  
-Docker (used 28.0.4)  
-Docker Compose (used 2.34.0)  
+This project requires:
+
+- **Node.js >= 22.20.0**
+- **npm >= 10.9.3**
+- **Angular CLI = 20.3.4**
+
+> Using older versions of Node may cause build or dependency errors.
+> Recommended: Use **nvm** to manage Node versions.
+
 
 ## How to Run the Project (With or without Docker) ###
 
