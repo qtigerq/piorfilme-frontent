@@ -62,7 +62,7 @@ This project requires:
 
 #### 3A. Run the Application  
 ```
-- npm start
+- ng serve
 ```
 The application will start on: http://localhost:4200  
 

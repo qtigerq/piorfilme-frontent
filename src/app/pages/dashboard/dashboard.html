@@ -9,9 +9,7 @@
           [value]="yearsWithMultipleWinners.years"
           [rows]="yearsWithMultipleWinners.years.length"
           [totalRecords]="yearsWithMultipleWinners.years.length"
-          [lazy]="true"
-          (onLazyLoad)="getYearsWithMultipleWinners()"
-          [loading]="loading"
+          [loading]="loadingGetYearsWithMultipleWinners"
           class="mt-10"
         >
           <ng-template pTemplate="header">
@@ -39,9 +37,7 @@
           [value]="studiosWithWinCount.studios"
           [rows]="studiosWithWinCount.studios.length"
           [totalRecords]="studiosWithWinCount.studios.length"
-          [lazy]="true"
-          (onLazyLoad)="getStudiosWithWinCount()"
-          [loading]="loading"
+          [loading]="loadingGetStudiosWithWinCount"
           class="mt-10"
         >
           <ng-template pTemplate="header">
@@ -74,8 +70,7 @@
           [value]="maxMinWinIntervalForProducers.max"
           [rows]="maxMinWinIntervalForProducers.max.length"
           [totalRecords]="maxMinWinIntervalForProducers.max.length"
-          [lazy]="true"
-          [loading]="loading"
+          [loading]="loadingGetMaxMinWinIntervalForProducers"
 
         >
           <ng-template pTemplate="header">
@@ -104,8 +99,7 @@
           [value]="maxMinWinIntervalForProducers.min"
           [rows]="maxMinWinIntervalForProducers.min.length"
           [totalRecords]="maxMinWinIntervalForProducers.min.length"
-          [lazy]="true"
-          [loading]="loading"
+          [loading]="loadingGetMaxMinWinIntervalForProducers"
 
         >
           <ng-template pTemplate="header">
@@ -138,13 +132,22 @@
           [value]="winnersByYear.winners"
           [rows]="winnersByYear.winners.length"
           [totalRecords]="winnersByYear.winners.length"
-          [loading]="loading"
+          [loading]="loadingGetWinnersByYear"
           class="mt-10"
         >
           <ng-template #caption>
             <div class="searchBar">
               <div style="width: 100%;">
-                <p-inputnumber style="width: 100%;" [(ngModel)]="getWinnerSearch" [showButtons]="true" [useGrouping]="false" [min]="1888" [max]="3000" inputId="winntersSearch"/>
+                <p-inputnumber
+                  style="width: 100%;"
+                  [(ngModel)]="getWinnerSearch"
+                  [showButtons]="true"
+                  [useGrouping]="false"
+                  [min]="1888"
+                  [max]="3000"
+                  inputId="winntersSearch"
+                  (keydown.enter)="getWinnersByYear()"
+                />
               </div>
               <div style="width: 42px;">
                 <p-inputicon>

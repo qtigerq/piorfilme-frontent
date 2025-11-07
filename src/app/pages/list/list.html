@@ -31,7 +31,20 @@
               <p-columnFilter type="text" field="title" placeholder="Enter title" ariaLabel="Filter title" [showMenu]="false"></p-columnFilter>
           </th>
           <th>
-              <p-columnFilter type="boolean" field="winner"></p-columnFilter>
+            <p-columnFilter field="winner" [showMenu]="false">
+              <ng-template pTemplate="filter" let-value let-filter="filterCallback">
+                <p-select
+                  [options]="winnerOptions"
+                  [ngModel]="value"
+                  (ngModelChange)="filter($event)"
+                  optionLabel="label"
+                  optionValue="value"
+                  placeholder="All"
+                  class="w-full"
+                  appendTo="body"
+                ></p-select>
+              </ng-template>
+            </p-columnFilter>
           </th>
       </tr>
     </ng-template>

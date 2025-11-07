@@ -21,70 +21,74 @@ export class Dashboard implements OnInit {
   studiosWithWinCount: StudiosWithWinCount = { studios: [] };
   maxMinWinIntervalForProducers: WinInterval = { min: [], max: []};
   winnersByYear: WinnersByYear = { winners: [] };
-  loading: boolean = false;
+  loadingGetYearsWithMultipleWinners: boolean = false;
+  loadingGetStudiosWithWinCount: boolean = false;
+  loadingGetMaxMinWinIntervalForProducers: boolean = false;
+  loadingGetWinnersByYear: boolean = false;
   getWinnerSearch: number = (new Date).getFullYear();
 
   constructor(private movieService: MovieService) {}
 
   ngOnInit(): void {
     this.getMaxMinWinIntervalForProducers();
+    this.getYearsWithMultipleWinners();
+    this.getStudiosWithWinCount();
+    this.getWinnersByYear();
   }
 
   getYearsWithMultipleWinners() {
-    this.loading = true;
+    this.loadingGetYearsWithMultipleWinners = true;
     this.movieService.getYearsWithMultipleWinners().subscribe({
       next: response => {
         this.yearsWithMultipleWinners = response;
-        this.loading = false;
+        this.loadingGetYearsWithMultipleWinners = false;
       },
       error: () => {
-        this.loading = false;
+        this.loadingGetYearsWithMultipleWinners = false;
       }
     });
   }
 
   getStudiosWithWinCount() {
-    this.loading = true;
+    this.loadingGetStudiosWithWinCount = true;
     this.movieService.getStudiosWithWinCount().subscribe({
       next: response => {
         const sortedStudios = response.studios.sort((a, b) => b.winCount - a.winCount);
         this.studiosWithWinCount = { studios: sortedStudios.slice(0, 3)};
-        this.loading = false;
+        this.loadingGetStudiosWithWinCount = false;
       },
       error: () => {
-        this.loading = false;
+        this.loadingGetStudiosWithWinCount = false;
       }
     });
   }
 
   getMaxMinWinIntervalForProducers() {
-    this.loading = true;
+    this.loadingGetMaxMinWinIntervalForProducers = true;
     this.movieService.getMaxMinWinIntervalForProducers().subscribe({
       next: response => {
         this.maxMinWinIntervalForProducers = response;
-        this.loading = false;
+        this.loadingGetMaxMinWinIntervalForProducers = false;
       },
       error: () => {
-        this.loading = false;
+        this.loadingGetMaxMinWinIntervalForProducers = false;
       }
     });
   }
 
   getWinnersByYear() {
-    console.log('getWinnersByYear');
-    console.log(this.getWinnerSearch)
     let year = null;
     if (this.getWinnerSearch) {
       year = this.getWinnerSearch;
-      this.loading = true;
+      this.loadingGetWinnersByYear = true;
 
       this.movieService.getWinnersByYear(year).subscribe({
         next: response => {
           this.winnersByYear = response;
-          this.loading = false;
+          this.loadingGetWinnersByYear = false;
         },
         error: () => {
-          this.loading = false;
+          this.loadingGetWinnersByYear = false;
         }
       });
     }
